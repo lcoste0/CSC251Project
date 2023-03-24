@@ -80,9 +80,9 @@ public class Policy
   }
   
   //getter methods
-  public int getPolicynum()
+  public int getPolicyNum()
   {
-   return policyNum
+   return policyNum;
   }
   
   public String getProviderName()
@@ -124,32 +124,25 @@ public class Policy
   public double calculateBMI()
   {
    final int BMI_NUM = 703;
-   return (policyHolderWeight * calculateBMI)/(policyHolderHeight*policyHolderHeight);
+   return (policyHolderWeight * BMI_NUM)/(policyHolderHeight*policyHolderHeight);
   }
   
   //calculate and return the price of insurance policy
-  public calculateInsurancePolicy()
+  public double calculateInsurancePolicy()
   {
    final int BASE_FEE = 600;
-   int additionalFee = 0;
+   double additionalFee = 0;
    
    if(policyHolderAge > 50)
    {
-    additionalFee = 75;
-   }
-   else 
-   {
-    additionalFee = additionalFee;
+    additionalFee += 75;
    }
    
+ 
    //determine if Policy Holder is a smoker
-   if(policyHolderSmokingStat.equalsIgnoreCase("yes"))
+   if(policyHolderSmokingStat.equalsIgnoreCase("smoker"))
    {
     additionalFee += 100;
-   }
-   else
-   {
-    additionalFee = additionalFee;
    }
    
    //determine if policy holder has a BMI over 35
@@ -157,13 +150,23 @@ public class Policy
    { 
     additionalFee +=(calculateBMI() - 35)*20;
    }
-   else
-   {
-    additionalFee = additionalFee;
-   }
    
    return BASE_FEE + additionalFee;
  
+  }
+  
+  public void displayInformation()
+  {
+   System.out.println("Policy Number: " + getPolicyNum());
+   System.out.println("Provider Name: " + getProviderName());
+   System.out.println("Policyholder's First Name: " + getFirstName());
+   System.out.println("Policyholder's Last Name: " + getLastName());
+   System.out.println("Policyholder's Age: " + getAge());
+   System.out.println("Policyholder's Smoking Status: " + getSmokingStatus());
+   System.out.println("Policyholder's Height: " + getHeight());
+   System.out.println("Policyholder's Weight: " + getWeight());
+   System.out.printf("Policyholder's BMI: %.2f\n ", calculateBMI());
+   System.out.printf("Policy Price: $%.2f ", calculateInsurancePolicy());
   }
   
 }//end of class
