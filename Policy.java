@@ -1,7 +1,7 @@
 public class Policy
 {
   //declaring fields
-  private int policyNum;
+  private String policyNum;
   private String providerName;
   private String policyHolderFirstName;
   private String policyHolderLastName;
@@ -13,7 +13,7 @@ public class Policy
   //no-arg constructor that sets default value for all fields
   public Policy()
   {
-    policyNum = 0;
+    policyNum = "";
     providerName = "";
     policyHolderFirstName = "";
     policyHolderLastName = "";
@@ -26,7 +26,7 @@ public class Policy
   constructor that accepts arguments
   @param num, provider, firstName, lastName, age, smokeStat, height, weight to store info
   */
-  public Policy(int num, String provider, String first, String last, int age, String smokeStat, double height, double weight)
+  public Policy(String num, String provider, String first, String last, int age, String smokeStat, double height, double weight)
   {
     policyNum = num;
     providerName = provider;
@@ -42,7 +42,7 @@ public class Policy
    setPolicyNum will set the policy number
    @param num The policy number
   */
-  public void setPolicynum(int num)
+  public void setPolicynum(String num)
   {
    policyNum = num;
   }
@@ -108,7 +108,7 @@ public class Policy
    getPolicyNum method
    @return The policy number
   */
-  public int getPolicyNum()
+  public String getPolicyNum()
   {
    return policyNum;
   }
