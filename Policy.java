@@ -4,21 +4,24 @@ public class Policy
   private String policyNum;
   private String providerName;
   private static int countPolicyObj;
+  private PolicyHolder policyHolder;
 
-  //no-arg constructor that sets default value for all fields
   public Policy()
   {
     policyNum = "";
     providerName = "";
+    PolicyHolder holder;
   }
   /**
   constructor that accepts arguments
-  @param num, provider, firstName, lastName, age, smokeStat, height, weight to store info
+  @param num, provider, holder
   */
-  public Policy(String num, String provider)
+  public Policy(String num, String provider, PolicyHolder holder)
   {
     policyNum = num;
     providerName = provider;
+    policyHolder = new PolicyHolder(holder);
+    countPolicyObj++;
   }
   //setter methods
   /**
@@ -37,6 +40,13 @@ public class Policy
   {
    providerName = provider;
   }
+  /**
+    @param holder, a PolicyHolder object
+  */
+  // public void setPolicyHolder(PolicyHolder holder)
+//   {
+//    policyHolder = new PolicyHolder(holder);
+//   }
    //getter methods
     /**
    getPolicyNum method
@@ -53,6 +63,10 @@ public class Policy
   public String getProviderName()
   {
    return providerName;
+  }
+  public PolicyHolder getPolicyHolder()
+  {
+   return new PolicyHolder(policyHolder);
   }
     /**
    ToString method

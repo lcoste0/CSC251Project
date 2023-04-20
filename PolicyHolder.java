@@ -28,6 +28,16 @@ public class PolicyHolder
     policyHolderHeight = height;
     policyHolderWeight = weight;
   }
+  
+  public PolicyHolder(PolicyHolder object2)
+  {
+    policyHolderFirstName = object2.policyHolderFirstName;
+    policyHolderLastName = object2.policyHolderLastName;
+    policyHolderAge = object2.policyHolderAge;
+    policyHolderSmokingStat = object2.policyHolderSmokingStat;
+    policyHolderHeight = object2.policyHolderHeight;
+    policyHolderWeight = object2.policyHolderWeight;
+  }
  //setter methods
  /**
    setFirstName will set the first name of the policy holder
