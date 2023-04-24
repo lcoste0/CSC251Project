@@ -183,7 +183,7 @@ public class PolicyHolder
   */
   public String toString()
   {
-  String str = "Policyholder's First Name: " + policyHolderFirstName + "\nPolicyholder's Last Name: " + policyHolderLastName + "\nPolicyholder's Age: " + policyHolderAge + "\nPolicyholder's Smoking Status: " + policyHolderSmokingStat + "\nPolicyholder's Height: " + policyHolderHeight + "\nPolicyholder's Weight: " + policyHolderWeight;
+  String str = "\nPolicyholder's First Name: " + policyHolderFirstName + "\nPolicyholder's Last Name: " + policyHolderLastName + "\nPolicyholder's Age: " + policyHolderAge + "\nPolicyholder's Smoking Status: " + policyHolderSmokingStat + "\nPolicyholder's Height: " + policyHolderHeight + "\nPolicyholder's Weight: " + policyHolderWeight;
   return str;
   }
 

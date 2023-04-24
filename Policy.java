@@ -3,7 +3,7 @@ public class Policy
   //declaring fields
   private String policyNum;
   private String providerName;
-  private static int countPolicyObj;
+  private static int countPolicyObj = 0;
   private PolicyHolder policyHolder;
 
   public Policy()
@@ -43,10 +43,10 @@ public class Policy
   /**
     @param holder, a PolicyHolder object
   */
-  // public void setPolicyHolder(PolicyHolder holder)
-//   {
-//    policyHolder = new PolicyHolder(holder);
-//   }
+  public void setPolicyHolder(PolicyHolder holder)
+  {
+   policyHolder = new PolicyHolder(holder);
+  }
    //getter methods
     /**
    getPolicyNum method
@@ -68,13 +68,21 @@ public class Policy
   {
    return new PolicyHolder(policyHolder);
   }
+  /**
+   The getObjectCount returns the number of objects created 
+   @return the number of objects created
+  */
+  public static int getObjectCount()
+  {
+   return countPolicyObj;
+  }
     /**
    ToString method
    display the policy number and provider name
   */
   public String toString()
   {
-   String policyStr = "Policy Number: " + policyNum + "\nProvider Name: " + providerName;
+   String policyStr = "Policy Number: " + policyNum + "\nProvider Name: " + providerName + policyHolder.toString();
    return policyStr;
   }
    
